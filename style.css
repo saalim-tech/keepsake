@@ -956,3 +956,193 @@ textarea:focus-visible {
     outline: 3px solid rgba(108, 99, 255, 0.25);
     outline-offset: 2px;
 }
+/* =========================================================
+   MOBILE BOTTOM NAVIGATION — FIX
+   ========================================================= */
+
+.bottom-nav {
+    position: fixed;
+    left: 20px;
+    right: 20px;
+    bottom: 16px;
+
+    height: 76px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+
+    padding: 8px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 26px;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.08);
+
+    z-index: 1000;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* Each navigation item */
+
+.nav-item {
+    height: 60px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 4px;
+
+    border: none;
+    background: transparent;
+
+    border-radius: 20px;
+
+    color: #aaa69d;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.2s ease;
+}
+
+
+/* Icons */
+
+.nav-item svg {
+    width: 21px;
+    height: 21px;
+
+    stroke-width: 2;
+}
+
+
+/* Labels */
+
+.nav-item span {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* Active navigation item */
+
+.nav-item.active {
+    color: #6c63ff;
+
+    background: #f0eeff;
+}
+
+
+.nav-item:active {
+    transform: scale(0.94);
+}
+
+
+/* =========================================================
+   FLOATING ADD BUTTON
+   ========================================================= */
+
+#addPersonButton {
+    position: fixed;
+
+    right: 20px;
+    bottom: 108px;
+
+    width: 68px;
+    height: 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 22px;
+
+    background: #6c63ff;
+
+    color: white;
+
+    font-size: 32px;
+    font-weight: 300;
+
+    box-shadow:
+        0 12px 30px rgba(108, 99, 255, 0.30);
+
+    cursor: pointer;
+
+    z-index: 1100;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+#addPersonButton:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 16px 35px rgba(108, 99, 255, 0.35);
+}
+
+
+#addPersonButton:active {
+    transform: scale(0.92);
+}
+
+
+/* =========================================================
+   MAKE ROOM FOR FIXED NAV
+   ========================================================= */
+
+main {
+    padding-bottom: 130px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .bottom-nav {
+        left: 14px;
+        right: 14px;
+        bottom: 12px;
+
+        height: 72px;
+
+        border-radius: 24px;
+    }
+
+
+    #addPersonButton {
+        right: 18px;
+        bottom: 98px;
+
+        width: 62px;
+        height: 62px;
+
+        border-radius: 20px;
+
+        font-size: 29px;
+    }
+
+
+    main {
+        padding-bottom: 120px;
+    }
+}
