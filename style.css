@@ -957,42 +957,51 @@ textarea:focus-visible {
     outline-offset: 2px;
 }
 /* =========================================================
-   MOBILE BOTTOM NAVIGATION — FIX
+   MOBILE BOTTOM NAVIGATION
    ========================================================= */
 
 .bottom-nav {
     position: fixed;
-    left: 20px;
-    right: 20px;
-    bottom: 16px;
 
-    height: 76px;
+    left: 50%;
+    bottom: 12px;
+
+    transform: translateX(-50%);
+
+    width: calc(100% - 28px);
+    max-width: 480px;
+
+    height: 72px;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
     align-items: center;
 
-    padding: 8px;
+    padding: 6px;
 
     background: rgba(255, 255, 255, 0.96);
 
     border: 1px solid rgba(0, 0, 0, 0.06);
-    border-radius: 26px;
+    border-radius: 24px;
 
     box-shadow:
         0 12px 35px rgba(0, 0, 0, 0.08);
 
-    z-index: 1000;
-
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
+
+    z-index: 1000;
 }
 
 
-/* Each navigation item */
+/* =========================================================
+   NAV ITEMS
+   ========================================================= */
 
 .nav-item {
-    height: 60px;
+    width: 100%;
+    height: 58px;
 
     display: flex;
     flex-direction: column;
@@ -1000,53 +1009,51 @@ textarea:focus-visible {
     align-items: center;
     justify-content: center;
 
-    gap: 4px;
+    gap: 3px;
+
+    padding: 0;
 
     border: none;
-    background: transparent;
+    border-radius: 18px;
 
-    border-radius: 20px;
+    background: transparent;
 
     color: #aaa69d;
 
     cursor: pointer;
 
     transition:
-        background 0.25s ease,
-        color 0.25s ease,
+        background 0.2s ease,
+        color 0.2s ease,
         transform 0.2s ease;
 }
 
 
-/* Icons */
-
-.nav-item svg {
-    width: 21px;
-    height: 21px;
-
-    stroke-width: 2;
-}
-
-
-/* Labels */
-
-.nav-item span {
-    font-size: 12px;
-    font-weight: 600;
-}
-
-
-/* Active navigation item */
-
 .nav-item.active {
-    color: #6c63ff;
-
     background: #f0eeff;
+    color: #6c63ff;
 }
 
 
 .nav-item:active {
     transform: scale(0.94);
+}
+
+
+/* =========================================================
+   NAV ICONS
+   ========================================================= */
+
+.nav-icon {
+    font-size: 20px;
+    line-height: 1;
+}
+
+
+.nav-item span:last-child {
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1;
 }
 
 
@@ -1058,24 +1065,27 @@ textarea:focus-visible {
     position: fixed;
 
     right: 20px;
-    bottom: 108px;
+    bottom: 98px;
 
-    width: 68px;
-    height: 68px;
+    width: 62px;
+    height: 62px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
+    padding: 0;
+
     border: none;
-    border-radius: 22px;
+    border-radius: 20px;
 
     background: #6c63ff;
 
     color: white;
 
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 300;
+    line-height: 1;
 
     box-shadow:
         0 12px 30px rgba(108, 99, 255, 0.30);
@@ -1108,41 +1118,46 @@ textarea:focus-visible {
    ========================================================= */
 
 main {
-    padding-bottom: 130px;
+    padding-bottom: 120px;
 }
 
 
 /* =========================================================
-   MOBILE
+   SMALL PHONES
    ========================================================= */
 
 @media (max-width: 600px) {
 
     .bottom-nav {
-        left: 14px;
-        right: 14px;
-        bottom: 12px;
+        width: calc(100% - 28px);
 
-        height: 72px;
+        bottom: 10px;
 
-        border-radius: 24px;
+        height: 70px;
+
+        border-radius: 23px;
+    }
+
+
+    .nav-item {
+        height: 56px;
     }
 
 
     #addPersonButton {
         right: 18px;
-        bottom: 98px;
+        bottom: 94px;
 
-        width: 62px;
-        height: 62px;
+        width: 60px;
+        height: 60px;
 
-        border-radius: 20px;
+        border-radius: 19px;
 
         font-size: 29px;
     }
 
 
     main {
-        padding-bottom: 120px;
+        padding-bottom: 116px;
     }
 }
